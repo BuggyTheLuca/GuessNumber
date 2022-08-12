@@ -53,6 +53,7 @@ function handleSubmit(event){
     
     if(numberDraw == kick){
         playAgain();
+        disableKicker();
         status.innerHTML = 'Parabéns, você acertou!!';
         result.style.transition = '0.4s';
         result.style.backgroundColor = '#37c978';
@@ -68,6 +69,11 @@ function handleSubmit(event){
         status.style.color = '#de4251';
         clear();
     }
+}
+
+//desabilita o botão de chute quando o jogador ganha
+function disableKicker(){
+    document.getElementById('kicker').disabled = true;
 }
 
 //o botao de jogar novamente fica disponivel após o jogador acertar o numberDraw
